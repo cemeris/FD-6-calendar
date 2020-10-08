@@ -1,0 +1,120 @@
+/** @format */
+/*
+    template: dark | light
+*/
+$template: dark;
+$body-bg: #baadd8;
+$column-1bg: #c5b5f0;
+
+@if $template == dark {
+  $body-bg: #2a2731;
+  $column-1bg: #17151c;
+}
+
+body {
+  background: $body-bg;
+}
+
+h1,
+h2,
+h3 {
+  color: white;
+}
+
+#main-block {
+  display: flex;
+  flex-wrap: wrap;
+
+  background: skyblue;
+  margin: 0 auto;
+  max-width: 1132px;
+}
+
+/*
+      Container 1
+  */
+#column-1 {
+  background: $column-1bg;
+
+  border-radius: 10px;
+  height: 700px;
+  width: 802px;
+}
+
+#column-2 {
+  background: #343434;
+  min-height: 700px;
+  width: 330px;
+}
+
+$header-height: 48px;
+$button-height: 40px;
+header {
+  background: #000;
+  border-radius: 10px;
+  height: $header-height;
+  padding: 12px 24px;
+}
+
+#top-menu {
+  float: right;
+  padding: ($header-height - $button-height)/2 0;
+
+  a {
+    font-size: 16px;
+    line-height: $button-height;
+    color: #cdc9d6;
+    text-decoration: none;
+    padding: 11px 24px;
+    border-radius: 99px;
+
+    &:hover {
+      background: #3c3844;
+    }
+  }
+
+  .active {
+    background: #133774;
+    color: #d8e6ff;
+    padding: 11px 35px;
+  }
+}
+
+header .toggle {
+  display: none;
+  color: #cdc9d6;
+}
+
+main {
+  padding: 24px;
+}
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &-nav-tab {
+    background: #17151c;
+    color: #7a7585;
+  }
+}
+
+@media only screen and (max-width: 1132px) {
+  /*
+    body {
+      background-color: lightblue;
+    }
+    #main-block,
+    #column-1 {
+      width: 100%;
+    }
+
+  #top-menu {
+    display: none;
+  }
+  .toggle {
+    display: inline;
+    float: right;
+  }
+         */
+}
